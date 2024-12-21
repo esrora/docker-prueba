@@ -16,12 +16,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-         fetch-depth: 0
+        fetch-depth: 0
     - name: Docker login
-       env:
-          DOCKER_ÜSER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASS }}
-       run: |
-          echo “Iniciáticando login….”
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-          echo “Fin del login”
+      env:
+        DOCKER_ÜSER: ${{ secrets.DOCKER_USER }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASS }}
+      run: |
+        echo “Iniciáticando login….”
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        echo “Fin del login”
