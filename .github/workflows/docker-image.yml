@@ -26,6 +26,8 @@ jobs:
     - name: Build Docker Image
       run: |
         docker image build -t esrora/docker-prueba:0.0.2 .
+        docker image build -t esrora/docker-prueba:latest .
     - name: Push Docker Image
       run: |
         docker image push esrora/docker-prueba:0.0.2
+        docker image push esrora/docker-prueba:latest
