@@ -3,21 +3,20 @@ name: Docker Image CI
 on:
   push:
     tags:
-      - "v*.*.*" # Se ejecuta cuando hay un push con tags semánticos como v1.0.0
+      - "v*.*.*"
     branches:
-      - "main"   # Opcional: También puede ejecutarse en la rama main
+      - "main"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # 1. Checkout del repositorio
+
     - name: Checkout
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
-    # 2. Obtener el tag del commit actual
     - name: Get the current tag
       id: versioning
       run: |
@@ -30,7 +29,6 @@ jobs:
         echo "TAG=$TAG" >> $GITHUB_ENV
         echo "El tag actual es: $TAG"
 
-    # 3. Login en Docker
     - name: Docker login
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
