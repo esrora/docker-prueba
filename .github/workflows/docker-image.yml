@@ -18,7 +18,7 @@ jobs:
       with:
         fetch-depth: 0
         
-    - name: Git Semantic Version 2
+    - name: Git Semantic Version 3
       uses: PaulHatch/semantic-version@v4.0.3
       with:
         major_pattern: "(MAJOR)"
